@@ -7,7 +7,7 @@ Created on Sat Aug 20 20:46:20 2022
 def main():
     a = check_fuel("Enter tank reading: ")
     print_check(a)
-
+#Function to prompt user and check exception
 def check_fuel(prompt):
     while True:
         try:
@@ -20,7 +20,7 @@ def check_fuel(prompt):
         except (ValueError, ZeroDivisionError):
             pass    
         
-
+#Function to calculate reading
 def print_check(z):    
     if z <=1 :
         print("E")
