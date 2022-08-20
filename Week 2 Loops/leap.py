@@ -4,7 +4,10 @@ Created on Sat Aug 20 12:46:16 2022
 
 @author: psen
 """
-
+def main():
+    year = int(input("Enter year: "))
+    print(is_leap(year))
+    
 def is_leap(year):
     leap = False
     
@@ -22,6 +25,7 @@ def is_leap(year):
     
     return leap
 
-year = int(input("Enter year: "))
-print(is_leap(year))
-#print((year/4)%2)
+
+
+if __name__ == "__main__":
+    main()

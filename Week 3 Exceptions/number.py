@@ -23,7 +23,8 @@ def get_int(prompt):
         #    return integers
         
 
-main()
+if __name__ == "__main__":
+    main()
         
 
     
