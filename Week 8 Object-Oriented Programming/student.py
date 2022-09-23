@@ -6,20 +6,21 @@ Created on Mon Sep 19 15:38:39 2022
 """
 
 class Student:
-    def __init__(self,name,house,patronus):      
+    def __init__(self,name,house,patronus=None):      
         self.name = name
         self.house = house
-        self.patronus = patronus
+        #self.patronus = patronus
     
     def __str__(self):
         return f"{self.name} from {self.house}"
-    
+    '''
     def charm(self):
         match self.patronus:  #NOQA
             case "Stag":
                 return "🦄"
             case _:
                 return "🪄"
+            '''
     #Getter
     @property
     def name(self):
@@ -41,24 +42,21 @@ class Student:
     #Setter
     @house.setter
     def house(self, house):
-        if house not in ["Gryffindor", "Slytherin"]:
+        if house not in ["Gryffindor", "Slytherin", "Hufflepuff"]:
             raise ValueError("Invalid House")
-        self._house = house       
-    
+        self._house = house     
+        
+    @classmethod
+    def get(cls):
+        name = input("Name: ")
+        house = input("House:")
+        return cls(name,house)
 
 def main():
-    S = get_student()
+    S = Student.get()
     print(S)
-    print("Expecto Patronum")
-    print(S.charm())
+    
 
-
-
-def get_student():
-    n = "Harry"
-    h = "Gryffindor"
-    p = "Stag"      
-    return Student(n,h,p)
 
 
 if __name__  ==  "__main__":
